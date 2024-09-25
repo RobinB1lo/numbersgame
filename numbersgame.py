@@ -2,9 +2,10 @@ import random
 import csv 
 from datetime import datetime
 
-#Function to write data in CSV file
+# Function to write data in CSV file
 def write_to_csv(username, attempts, level):
-    with open('numbersgame.csv', mode='a', newline='') as file:
+    print(f"Writing to CSV: {username}, Level: {level}, Attempts: {attempts}") 
+    with open('pythonprojects/numbersgame.csv', mode='a', newline='') as file:
         writer = csv.writer(file)
         writer.writerow([username, attempts, level, datetime.now.strftime('%Y-%m-%d %H:%M:%S')]) #strftime()
 
@@ -16,7 +17,7 @@ def level_1(username):
     target_number = random.randint(1, 100)
     attempts = 0
     while True:
-        user_guess = int(input("Enter your guess:"))
+        user_guess = str(input("Enter your guess:"))
         if user_guess.lower() == "menu":
             print("Returning to the main menu...")
             break
@@ -44,7 +45,7 @@ def level_2(username):
     target_number = random.randint(1, 100)
     attempts = 0
     while True:
-        user_guess = int(input("Enter your guess:"))
+        user_guess = str(input("Enter your guess:"))
         if user_guess.lower() == "menu":
             print("Returning to the main menu...")
             break
