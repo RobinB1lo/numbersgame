@@ -44,7 +44,7 @@ def level_2(username):
     target_number = random.randint(1, 100)
     attempts = 0
     while True:
-        user_guess = str(input("Enter your guess:"))
+        user_guess = str(input("Enter your guess:")) #Invalid input problem might be related to assigning user_guess as string 
         if user_guess.lower() == "menu":
             print("Returning to the main menu...")
             break
@@ -57,7 +57,11 @@ def level_2(username):
                 print(f"Congratulations {username}! You have guessed the number in {attempts} attempts.")
                 write_to_csv(username, attempts, 2)
                 break
+            
             numbers.remove(target_number)
+            if len(numbers) == 0:
+                print("You have guessed all numbers. Starting a new game...")
+                break
             target_number = random.randint(1, 100)
         except ValueError:
             print("Invalid input. Please enter a number between 1 and 100.")
