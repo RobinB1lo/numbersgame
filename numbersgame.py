@@ -62,7 +62,7 @@ def level_2(username):
             if len(numbers) == 0:
                 print("You have guessed all numbers. Starting a new game...")
                 break
-            
+
             target_number = random.randint(1, 100)
         except ValueError:
             print("Invalid input. Please enter a number between 1 and 100.")
@@ -117,7 +117,7 @@ def level_3(username):
 # Main menu (suggested by Chat GPT)
 
 def main_menu():
-    print("Welcome to the number guessing game!")
+    print("\nWelcome to the number guessing game!\n")
     username = input("Enter your username: ")
     while True:
         print("\nMain Menu:")
