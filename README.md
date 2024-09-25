@@ -1,4 +1,4 @@
-##numbers game 
+**numbers game** 
 
 - Level 1 is a standard number guessing game where you are trying to guess the random number the program picked and based off your guess you will be told if your guess is either too low or too high.
 - Level 2 is a more difficult number guessing game and the most difficult out of the 3 games. In this game you are again, guessing the number that the program picked, but now every time you guess the program will change the number you are trying to guess. The program can't go back to the same number twice.
