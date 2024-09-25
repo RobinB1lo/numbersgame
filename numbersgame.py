@@ -62,6 +62,7 @@ def level_2(username):
             if len(numbers) == 0:
                 print("You have guessed all numbers. Starting a new game...")
                 break
+            
             target_number = random.randint(1, 100)
         except ValueError:
             print("Invalid input. Please enter a number between 1 and 100.")
