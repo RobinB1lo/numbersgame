@@ -2,21 +2,21 @@ import random
 import csv 
 from datetime import datetime
 
-#Function to write data in CSV file
-def write_to_csv(username, attempts, level):
+# Function to write data in CSV file
+def write_to_csv(username, attempts, level): 
     with open('numbersgame.csv', mode='a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([username, attempts, level, datetime.now.strftime('%Y-%m-%d %H:%M:%S')]) #strftime()
+        writer.writerow([username, attempts, level, datetime.now().strftime('%Y-%m-%d %H:%M:%S')]) #strftime()
 
 # Level 1: Standard number guessing game 
 
 def level_1(username):
     print("\n--- Level 1: Guess the number between 1 and 100 ---")
-    print("\nType 'menu' at any time to return back to main menu")
+    print("\nType 'menu' at any time to return back to main menu\n")
     target_number = random.randint(1, 100)
     attempts = 0
     while True:
-        user_guess = int(input("Enter your guess:"))
+        user_guess = str(input("Enter your guess:"))
         if user_guess.lower() == "menu":
             print("Returning to the main menu...")
             break
@@ -39,12 +39,12 @@ def level_1(username):
 
 def level_2(username):
     print("\n--- Level 2: Guess the number beetween 1 and 100.... but the number changes every time you guess ;) ---")
-    print("\nType 'menu' at any time to return back to main menu")
+    print("\nType 'menu' at any time to return back to main menu\n")
     numbers = list(range(1, 101))
     target_number = random.randint(1, 100)
     attempts = 0
     while True:
-        user_guess = int(input("Enter your guess:"))
+        user_guess = str(input("Enter your guess:"))
         if user_guess.lower() == "menu":
             print("Returning to the main menu...")
             break
@@ -66,7 +66,7 @@ def level_2(username):
 
 def level_3(username):
     print("\n--- Level 3: Code Breaker ---")
-    print("\nType 'menu' at any time to return back to main menu")
+    print("\nType 'menu' at any time to return back to main menu\n")
     program_number = random.randint(100, 999)
     attempts = 0
     while True:
