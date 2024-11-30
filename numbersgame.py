@@ -6,7 +6,7 @@ from datetime import datetime
 def write_to_csv(username, attempts, level): 
     with open('numbersgame.csv', mode='a', newline='') as file:
         writer = csv.writer(file)
-        writer.writerow([username, attempts, level, datetime.now().strftime('%Y-%m-%d %H:%M:%S')]) #strftime()
+        writer.writerow([username, attempts, level, datetime.now().strftime('%Y-%m-%d %H:%M:%S')]) 
 
 # Level 1: Standard number guessing game 
 
@@ -21,7 +21,7 @@ def level_1(username):
             print("Returning to the main menu...")
             break
 
-        try: #try: except:
+        try: 
             user_guess = int(user_guess)
             attempts += 1
             if target_number > user_guess:
@@ -44,7 +44,7 @@ def level_2(username):
     target_number = random.randint(1, 100)
     attempts = 0
     while True:
-        user_guess = str(input("Enter your guess:")) #Invalid input problem might be related to assigning user_guess as string 
+        user_guess = str(input("Enter your guess:")) 
         if user_guess.lower() == "menu":
             print("Returning to the main menu...")
             break
@@ -81,8 +81,8 @@ def level_3(username):
             break
         try:
             user_guess = str(user_guess)
-            if len(user_guess) != 3 or not user_guess.isdigit(): #isdigit()
-                raise ValueError("Invalid input. Please enter a 3-digit number.") #raise
+            if len(user_guess) != 3 or not user_guess.isdigit(): 
+                raise ValueError("Invalid input. Please enter a 3-digit number.") 
         except ValueError as e:
             print(e)
             continue
@@ -98,7 +98,7 @@ def level_3(username):
         for i in range(3): 
             if user_guess_numbers[i] == program_number_numbers[i]:
                 correct_spot += 1 
-                program_number_numbers[i] = user_guess_numbers[i] = None #Chat GPT told me to do this and I dont fully understand why
+                program_number_numbers[i] = user_guess_numbers[i] = None 
     
         for i in range(3): 
             if program_number_numbers[i] is not None and program_number_numbers[i] in user_guess_numbers:
