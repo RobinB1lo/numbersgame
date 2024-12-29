@@ -1,0 +1,1 @@
+This is a Interactive blackjack game where you can calculate your probabaility of winning based on your hand and the dealer's vsisible card. The game is played with only 1 deck, to reset the deck at 52 cards you simply shuffle the deck. The math still has some issues that I will fix shortly.
