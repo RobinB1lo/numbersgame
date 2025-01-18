@@ -21,26 +21,28 @@ def level_1(username):
     target_number = random.randint(1, 100)
     attempts = 0
     while True:
-        user_guess = str(input("Enter your guess:"))
+        user_guess = input("Enter your guess:")
         if user_guess.lower() == "menu":
             print("Returning to the main menu...")
             break
 
         try:
             user_guess = int(user_guess)
-            attempts += 1
-            if target_number > user_guess:
-                print("Too low!")
-            elif target_number < user_guess:
-                print("Too high!")
-            else:
-                print(
-                    f"Congratulations {username}! You have guessed the number in {attempts} attempts."
-                )
-                write_to_csv(username, attempts, 1)
-                break
         except ValueError:
             print("Invalid input. Please enter a number between 1 and 100.")
+            continue
+
+        attempts += 1
+        if target_number > user_guess:
+            print("Too low!")
+        elif target_number < user_guess:
+            print("Too high!")
+        else:
+            print(
+                f"Congratulations {username}! You have guessed the number in {attempts} attempts."
+            )
+            write_to_csv(username, attempts, 1)
+            break
 
 
 # Level 2: Advanced number guessing game
@@ -133,10 +135,9 @@ def level_3(username):
             )
             write_to_csv(username, attempts, 3)
             break
-        else:
-            print(
-                f"{correct_spot} correct spot(s), {wrong_spot} wrong spot(s), {wrong_number} wrong number(s) at the wrong spot."
-            )
+        print(
+            f"{correct_spot} correct spot(s), {wrong_spot} wrong spot(s), {wrong_number} wrong number(s) at the wrong spot."
+        )
 
 
 # Main menu (suggested by Chat GPT)

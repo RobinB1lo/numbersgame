@@ -1,0 +1,21 @@
+[tool.ruff.lint]
+select = ["ALL"]
+
+ignore = [
+  "D213",    # multi-line-summary-second-line
+  "ANN201",  # Missing return type
+  "D401",    # imperative mood
+  "FA102",   # future-required-type-annotation
+  "S603",    # subprocess-without-shell-equals-true #4045
+  "RET504",  # unnecessary assign to clipboard
+  "S101",    # allow asserts, used for tests
+  "S311",    # suspicious-non-cryptographic-random-usage
+  "T201",    # print found
+  "TC003",   # move import into type-checking block
+  "FBT003",  # boolean positional value in function call
+  # formatting
+  "COM812",  # trailing comma missing
+  "D203",    # one-blank-line-before-class
+  "D213",    # multi-line-summary-second-line
+  "ISC001",  # single-line-implicit-string-concatenation
+]
